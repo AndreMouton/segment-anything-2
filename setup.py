@@ -29,6 +29,7 @@ REQUIRED_PACKAGES = [
     "hydra-core>=1.3.2",
     "iopath>=0.1.10",
     "pillow>=9.4.0",
+    "perceiver @ git+https://github.com/AndreMouton/perceiver@base_lib" "pytest",
 ]
 
 EXTRA_PACKAGES = {
@@ -87,7 +88,6 @@ try:
     from torch.utils.cpp_extension import BuildExtension
 
     class BuildExtensionIgnoreErrors(BuildExtension):
-
         def finalize_options(self):
             try:
                 super().finalize_options()
